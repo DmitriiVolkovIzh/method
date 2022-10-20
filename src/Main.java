@@ -1,5 +1,3 @@
-import java.time.LocalDate;
-
 public class Main {
     public static int typeYear(int year) {
 
@@ -11,41 +9,43 @@ public class Main {
 
         return 0;
     }
-    private static void currentYear(int clientOS,int clientDeviceYear) {
+
+    private static void currentYear(int clientOS, int clientDeviceYear) {
 
 
         if (clientOS == 0) {
             System.out.println("Установите версию приложения для iOS по ссылке");
-        } else  {
+        } else {
             System.out.println("Установите версию приложения для Android по ссылке");
         }
 
-        if (clientOS==0)
+        if (clientOS == 0)
             if (clientDeviceYear < 2015) {
-                System.out.println("Установите облегченную версию приложения для iOS по ссылке");}
-            else {
-                System.out.println("Установите обычную версию приложения для iOS по ссылке");}
-        else
-        if (clientDeviceYear < 2015) {
-            System.out.println("Установите облегченную версию приложения для Android по ссылке");}
-        else {
-            System.out.println("Установите обычную версию приложения для Android по ссылке");}
+                System.out.println("Установите облегченную версию приложения для iOS по ссылке");
+            } else {
+                System.out.println("Установите обычную версию приложения для iOS по ссылке");
+            }
+        else if (clientDeviceYear < 2015) {
+            System.out.println("Установите облегченную версию приложения для Android по ссылке");
+        } else {
+            System.out.println("Установите обычную версию приложения для Android по ссылке");
+        }
 
     }
+
     private static void deliveryTime(int deliveryDistance, int deliveryDays) {
 
-        if (deliveryDistance > 20){
+        if (deliveryDistance > 20) {
+            deliveryDays++;
+            System.out.println(deliveryDays + " дня необходимо для доставки");
+        } else if (deliveryDistance > 40) {
+            deliveryDays++;
+            System.out.println(deliveryDays + " дня необходимо для доставки");
+        } else if (deliveryDistance > 60) {
             deliveryDays++;
             System.out.println(deliveryDays + " дня необходимо для доставки");
         }
-        else if (deliveryDistance > 40){
-            deliveryDays++;
-            System.out.println(deliveryDays + " дня необходимо для доставки");
-        }
-        else if (deliveryDistance > 60){
-            deliveryDays++;
-            System.out.println(deliveryDays + " дня необходимо для доставки");
-        }}
+    }
 
     public static void main(String[] args) {
         // Задание 1
@@ -56,19 +56,18 @@ public class Main {
         // Задание 2
         System.out.println("Задание 2.");
 
-        currentYear(0,2016);
+        currentYear(0, 2016);
 
         // Задание 3
         System.out.println("Задание 3.");
 
-        deliveryTime(45,1);
-
-
-
-    }
+        deliveryTime(45, 1);
 
 
     }
+
+
+}
 
 
 
